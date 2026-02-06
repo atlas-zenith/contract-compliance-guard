@@ -1,7 +1,7 @@
 """Contract Compliance Guard - Streamlit UI with Adversarial Debate View.
 
 A consulting-grade contract review tool using adversarial AI agents.
-McKinsey design palette with executive-first presentation.
+Corporate Legal design palette with executive-first presentation.
 """
 
 import streamlit as st
@@ -137,7 +137,7 @@ def render_advocate_panel(arguments: list):
         <div class="argument-card">
             <strong>{point_escaped}</strong>
             <span class="strength-badge {strength_class}">{strength_escaped}</span>
-            <p style="margin: 0.5rem 0 0 0; font-size: 0.9rem; color: #374151;">
+            <p style="margin: 0.5rem 0 0 0; font-size: 0.9rem; color: #2D2A26;">
                 {argument_escaped}
             </p>
         </div>
@@ -169,7 +169,7 @@ def render_auditor_panel(findings: list):
         <div class="finding-card {risk}">
             <strong>{clause_escaped}</strong>
             {get_risk_pill(risk)}
-            <p style="margin: 0.5rem 0; font-size: 0.9rem; color: #374151;">
+            <p style="margin: 0.5rem 0; font-size: 0.9rem; color: #2D2A26;">
                 {finding_escaped}
             </p>
         """, unsafe_allow_html=True)
@@ -184,7 +184,7 @@ def render_auditor_panel(findings: list):
         
         if finding.get('suggested_revision'):
             revision_escaped = html.escape(finding['suggested_revision'])
-            st.markdown(f'<p style="font-size: 0.8rem; color: #059669; margin: 0.5rem 0 0 0;"><strong>💡 Suggested:</strong> {revision_escaped}</p>', unsafe_allow_html=True)
+            st.markdown(f'<p style="font-size: 0.8rem; color: #1B4332; margin: 0.5rem 0 0 0;"><strong>💡 Suggested:</strong> {revision_escaped}</p>', unsafe_allow_html=True)
         
         st.markdown("</div>", unsafe_allow_html=True)
     
@@ -211,14 +211,14 @@ def render_verdict(verdict: dict, contract_name: str):
         <div style="display: flex; justify-content: space-between; align-items: center;">
             <div>
                 <h2 style="margin: 0;">{emoji} {label}</h2>
-                <p style="margin: 0.5rem 0 0 0; color: #6B7280;">{action}</p>
+                <p style="margin: 0.5rem 0 0 0; color: #5C5752;">{action}</p>
             </div>
             <div style="text-align: right;">
-                <div style="font-size: 2.5rem; font-weight: 700; color: {'#EF4444' if risk_score > 60 else '#F59E0B' if risk_score > 30 else '#10B981'};">
+                <div style="font-size: 2.5rem; font-weight: 700; font-family: 'Merriweather', Georgia, serif; color: {'#E74C3C' if risk_score > 60 else '#D4A84B' if risk_score > 30 else '#1B4332'};">
                     {risk_score}
                 </div>
-                <div style="font-size: 0.8rem; color: #6B7280;">Risk Score</div>
-                <div style="font-size: 0.75rem; color: #9CA3AF;">{confidence}% confidence</div>
+                <div style="font-size: 0.8rem; color: #5C5752; text-transform: uppercase; letter-spacing: 0.05em;">Risk Score</div>
+                <div style="font-size: 0.75rem; color: #8B7355;">{confidence}% confidence</div>
             </div>
         </div>
     </div>
