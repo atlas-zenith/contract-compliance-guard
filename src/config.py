@@ -6,10 +6,20 @@ from typing import Dict, Any
 
 
 def load_company_policy() -> Dict[str, Any]:
-    """Load company policy configuration."""
+    """Load company policy configuration.
+    
+    Raises:
+        FileNotFoundError: If policy file doesn't exist
+        ValueError: If policy file contains invalid JSON
+    """
     policy_path = Path(__file__).parent.parent / "data" / "company_policy.json"
-    with open(policy_path, "r") as f:
-        return json.load(f)
+    if not policy_path.exists():
+        raise FileNotFoundError(f"Policy file not found: {policy_path}")
+    try:
+        with open(policy_path, "r") as f:
+            return json.load(f)
+    except json.JSONDecodeError as e:
+        raise ValueError(f"Invalid policy JSON: {e}")
 
 
 # Load policy at module level for easy access

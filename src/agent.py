@@ -9,6 +9,7 @@ This module implements the adversarial agent architecture:
 
 import os
 import json
+import logging
 from pathlib import Path
 from typing import Dict, Any, Optional
 
@@ -17,6 +18,8 @@ try:
     load_dotenv()
 except ImportError:
     pass  # dotenv not required for demo mode
+
+logger = logging.getLogger(__name__)
 
 
 def has_api_key() -> bool:
@@ -309,6 +312,8 @@ def run_analysis(contract_id: str, use_demo: bool = False) -> Dict[str, Any]:
     try:
         return run_live_analysis(contract_id)
     except Exception as e:
-        # Fall back to demo on any error
-        print(f"Live analysis failed: {e}, falling back to demo mode")
-        return run_demo_analysis(contract_id)
+        # Fall back to demo on any error - log warning and flag the result
+        logger.warning(f"Live analysis failed: {e}, using demo mode")
+        result = run_demo_analysis(contract_id)
+        result['_fallback_used'] = True
+        return result

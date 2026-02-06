@@ -6,12 +6,13 @@ McKinsey design palette with executive-first presentation.
 
 import streamlit as st
 import json
+import html
 import time
 from pathlib import Path
 from dotenv import load_dotenv
 import os
 
-from src.agent import run_analysis, has_api_key
+from src.agent import run_analysis, has_api_key, load_demo_results
 from src.config import CONTRACT_DISPLAY_NAMES, CONTRACT_FILES
 
 # Load environment variables
@@ -26,377 +27,26 @@ st.set_page_config(
 )
 
 # ============================================================================
-# CONSULTING-GRADE CSS (McKinsey Style)
+# CONSULTING-GRADE CSS (McKinsey Style) - Loaded from external file
 # ============================================================================
-st.markdown("""
+def load_css() -> str:
+    """Load CSS from external file."""
+    css_path = Path(__file__).parent / "static" / "styles.css"
+    if css_path.exists():
+        with open(css_path, "r") as f:
+            return f.read()
+    return ""
+
+# Apply CSS
+css_content = load_css()
+st.markdown(f"""
 <style>
-    /* Import fonts */
-    @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Inter:wght@400;500;600&display=swap');
-    
-    /* Serif Headers - McKinsey Style */
-    h1, h2, h3 { 
-        font-family: 'Libre Baskerville', Georgia, serif !important; 
-        color: #051C2C !important;
-        letter-spacing: -0.02em;
-    }
-    
-    /* Body text */
-    .stMarkdown, p, span {
-        font-family: 'Inter', -apple-system, sans-serif;
-    }
-    
-    /* Clean Metric Cards with Navy accent */
-    div[data-testid="metric-container"] {
-        background-color: #F8F9FA;
-        border-left: 4px solid #051C2C;
-        padding: 15px 20px;
-        border-radius: 4px;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.08);
-    }
-    
-    /* Confidentiality Banner */
-    .confidential-banner {
-        position: fixed;
-        top: 0;
-        right: 0;
-        background: #051C2C;
-        color: white;
-        padding: 4px 16px;
-        font-size: 0.7rem;
-        font-weight: 600;
-        letter-spacing: 0.1em;
-        z-index: 9999;
-        border-bottom-left-radius: 4px;
-    }
-    
-    /* Executive Summary Container */
-    .executive-summary {
-        background: linear-gradient(135deg, #051C2C 0%, #0A2F4E 100%);
-        color: white;
-        padding: 2rem 2.5rem;
-        border-radius: 8px;
-        margin-bottom: 2rem;
-    }
-    
-    .executive-summary h2 {
-        color: white !important;
-        margin-bottom: 1.5rem;
-        font-size: 1.4rem;
-    }
-    
-    .exec-metric {
-        text-align: center;
-        padding: 1rem;
-    }
-    
-    .exec-metric-value {
-        font-size: 2.2rem;
-        font-weight: 700;
-        color: #00A9F4;
-        font-family: 'Inter', sans-serif;
-    }
-    
-    .exec-metric-value.high-risk { color: #EF4444; }
-    .exec-metric-value.medium-risk { color: #F59E0B; }
-    .exec-metric-value.low-risk { color: #10B981; }
-    
-    .exec-metric-label {
-        font-size: 0.85rem;
-        color: rgba(255,255,255,0.8);
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-        margin-top: 0.25rem;
-    }
-    
-    .time-comparison {
-        background: rgba(0, 169, 244, 0.15);
-        border: 1px solid rgba(0, 169, 244, 0.3);
-        border-radius: 6px;
-        padding: 1rem 1.5rem;
-        text-align: center;
-        margin-top: 1rem;
-    }
-    
-    .time-comparison .before {
-        color: rgba(255,255,255,0.6);
-        text-decoration: line-through;
-    }
-    
-    .time-comparison .arrow {
-        color: #00A9F4;
-        font-size: 1.2rem;
-        margin: 0 0.5rem;
-    }
-    
-    .time-comparison .after {
-        color: #00A9F4;
-        font-weight: 600;
-    }
-    
-    /* Status Pill Badges */
-    .status-pill {
-        display: inline-block;
-        padding: 0.35rem 0.9rem;
-        border-radius: 20px;
-        font-weight: 600;
-        font-size: 0.8rem;
-        text-transform: uppercase;
-        letter-spacing: 0.03em;
-    }
-    
-    .status-approve {
-        background-color: #ECFDF5;
-        color: #047857;
-        border: 1px solid #6EE7B7;
-    }
-    
-    .status-legal-review {
-        background-color: #FEFCE8;
-        color: #A16207;
-        border: 1px solid #FDE047;
-    }
-    
-    .status-reject {
-        background-color: #FFE5E5;
-        color: #C53030;
-        border: 1px solid #FEB2B2;
-    }
-    
-    /* Risk level badges */
-    .risk-high {
-        background-color: #FFE5E5;
-        color: #C53030;
-        border: 1px solid #FEB2B2;
-    }
-    
-    .risk-medium {
-        background-color: #FEFCE8;
-        color: #A16207;
-        border: 1px solid #FDE047;
-    }
-    
-    .risk-low {
-        background-color: #ECFDF5;
-        color: #047857;
-        border: 1px solid #6EE7B7;
-    }
-    
-    /* Adversarial Debate Panels */
-    .debate-panel {
-        background: white;
-        border-radius: 10px;
-        padding: 1.5rem;
-        box-shadow: 0 2px 8px rgba(5, 28, 44, 0.06);
-        border: 1px solid #E2E8F0;
-        height: 100%;
-    }
-    
-    .advocate-panel {
-        border-top: 4px solid #10B981;
-    }
-    
-    .auditor-panel {
-        border-top: 4px solid #EF4444;
-    }
-    
-    .debate-header {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        margin-bottom: 1rem;
-        padding-bottom: 0.75rem;
-        border-bottom: 1px solid #E2E8F0;
-    }
-    
-    .debate-header .emoji {
-        font-size: 1.5rem;
-    }
-    
-    .debate-header h3 {
-        margin: 0 !important;
-        font-size: 1.1rem !important;
-    }
-    
-    /* Argument/Finding Cards */
-    .argument-card {
-        background: #F0FDF4;
-        border-left: 3px solid #10B981;
-        padding: 0.75rem 1rem;
-        margin: 0.5rem 0;
-        border-radius: 0 6px 6px 0;
-    }
-    
-    .finding-card {
-        background: #FEF2F2;
-        border-left: 3px solid #EF4444;
-        padding: 0.75rem 1rem;
-        margin: 0.5rem 0;
-        border-radius: 0 6px 6px 0;
-    }
-    
-    .finding-card.medium {
-        background: #FFFBEB;
-        border-left-color: #F59E0B;
-    }
-    
-    .finding-card.low {
-        background: #F0F9FF;
-        border-left-color: #0EA5E9;
-    }
-    
-    .strength-badge {
-        display: inline-block;
-        padding: 0.15rem 0.5rem;
-        border-radius: 10px;
-        font-size: 0.7rem;
-        font-weight: 600;
-        text-transform: uppercase;
-    }
-    
-    .strength-strong { background: #D1FAE5; color: #065F46; }
-    .strength-moderate { background: #FEF3C7; color: #92400E; }
-    .strength-weak { background: #FEE2E2; color: #991B1B; }
-    
-    /* Verdict Box */
-    .verdict-box {
-        background: white;
-        border: 2px solid #051C2C;
-        border-radius: 8px;
-        padding: 1.5rem 2rem;
-        margin-top: 1.5rem;
-    }
-    
-    .verdict-approve { border-color: #10B981; background: #F0FDF4; }
-    .verdict-legal-review { border-color: #F59E0B; background: #FFFBEB; }
-    .verdict-reject { border-color: #EF4444; background: #FEF2F2; }
-    
-    /* Risk Score Dial */
-    .risk-dial {
-        width: 120px;
-        height: 60px;
-        background: conic-gradient(from 180deg, #10B981 0deg 60deg, #F59E0B 60deg 120deg, #EF4444 120deg 180deg);
-        border-radius: 60px 60px 0 0;
-        position: relative;
-        margin: 0 auto;
-    }
-    
-    /* Investigation Log */
-    .investigation-step {
-        background: #FAFBFC;
-        border-left: 3px solid #00A9F4;
-        padding: 0.75rem 1rem;
-        margin: 0.5rem 0;
-        border-radius: 0 6px 6px 0;
-        font-size: 0.9rem;
-    }
-    
-    .investigation-step .step-ok { color: #059669; font-weight: 600; }
-    .investigation-step .step-alert { color: #DC2626; font-weight: 600; }
-    .investigation-step .step-info { color: #0284C7; font-weight: 600; }
-    
-    /* Contract Quote */
-    .contract-quote {
-        background: #F8FAFC;
-        border-left: 3px solid #94A3B8;
-        padding: 0.5rem 0.75rem;
-        font-family: 'SF Mono', 'Menlo', monospace;
-        font-size: 0.8rem;
-        color: #475569;
-        margin: 0.5rem 0;
-        border-radius: 0 4px 4px 0;
-    }
-    
-    /* ASC 606 Reference */
-    .asc-reference {
-        display: inline-block;
-        background: #E0E7FF;
-        color: #3730A3;
-        padding: 0.15rem 0.5rem;
-        border-radius: 4px;
-        font-size: 0.75rem;
-        font-weight: 600;
-    }
-    
-    /* Sidebar styling */
-    section[data-testid="stSidebar"] {
-        background: linear-gradient(180deg, #051C2C 0%, #0A2F4E 100%);
-    }
-    
-    section[data-testid="stSidebar"] h1,
-    section[data-testid="stSidebar"] h2,
-    section[data-testid="stSidebar"] h3 {
-        color: white !important;
-    }
-    
-    section[data-testid="stSidebar"] .stMarkdown,
-    section[data-testid="stSidebar"] p,
-    section[data-testid="stSidebar"] span,
-    section[data-testid="stSidebar"] label {
-        color: rgba(255, 255, 255, 0.9) !important;
-    }
-    
-    section[data-testid="stSidebar"] hr {
-        border-color: rgba(255, 255, 255, 0.2);
-    }
-    
-    /* Methodology Badge */
-    .methodology-badge {
-        background: rgba(0, 169, 244, 0.15);
-        border: 1px solid rgba(0, 169, 244, 0.3);
-        border-radius: 6px;
-        padding: 0.75rem 1rem;
-        font-size: 0.8rem;
-        color: rgba(255, 255, 255, 0.9);
-    }
-    
-    /* Demo banner */
-    .demo-banner {
-        background: linear-gradient(90deg, #6366F1 0%, #8B5CF6 100%);
-        color: white;
-        padding: 0.6rem 1rem;
-        border-radius: 6px;
-        margin-bottom: 1.5rem;
-        text-align: center;
-        font-weight: 500;
-        font-size: 0.9rem;
-    }
-    
-    /* Main page background */
-    .stApp {
-        background: linear-gradient(180deg, #F0F4F8 0%, #E8ECF1 100%);
-    }
-    
-    /* Button styling */
-    .stButton > button {
-        background: linear-gradient(135deg, #051C2C 0%, #0A3D62 100%);
-        color: white;
-        border: none;
-        font-weight: 600;
-        padding: 0.6rem 1.5rem;
-        border-radius: 6px;
-        transition: all 0.2s ease;
-    }
-    
-    .stButton > button:hover {
-        background: linear-gradient(135deg, #0A3D62 0%, #051C2C 100%);
-        box-shadow: 0 4px 12px rgba(5, 28, 44, 0.25);
-    }
-    
-    /* Hide Streamlit branding */
-    #MainMenu {visibility: hidden;}
-    footer {visibility: hidden;}
+{css_content}
 </style>
 
 <!-- Confidentiality Banner -->
 <div class="confidential-banner">CONFIDENTIAL — CLIENT PROPRIETARY DATA</div>
 """, unsafe_allow_html=True)
-
-
-def load_demo_results():
-    """Load pre-recorded demo results."""
-    demo_path = Path(__file__).parent / "data" / "demo_results.json"
-    with open(demo_path, "r") as f:
-        return json.load(f)
 
 
 def get_status_pill(recommendation: str) -> str:
@@ -478,12 +128,17 @@ def render_advocate_panel(arguments: list):
         strength = arg.get('strength', 'moderate')
         strength_class = f"strength-{strength}"
         
+        # Escape LLM/demo content for security
+        point_escaped = html.escape(arg.get('point', ''))
+        argument_escaped = html.escape(arg.get('argument', ''))
+        strength_escaped = html.escape(strength)
+        
         st.markdown(f"""
         <div class="argument-card">
-            <strong>{arg['point']}</strong>
-            <span class="strength-badge {strength_class}">{strength}</span>
+            <strong>{point_escaped}</strong>
+            <span class="strength-badge {strength_class}">{strength_escaped}</span>
             <p style="margin: 0.5rem 0 0 0; font-size: 0.9rem; color: #374151;">
-                {arg['argument']}
+                {argument_escaped}
             </p>
         </div>
         """, unsafe_allow_html=True)
@@ -506,23 +161,30 @@ def render_auditor_panel(findings: list):
     for finding in findings:
         risk = finding.get('risk_level', 'medium').lower()
         
+        # Escape LLM/demo content for security
+        clause_escaped = html.escape(finding.get('clause', ''))
+        finding_escaped = html.escape(finding.get('finding', ''))
+        
         st.markdown(f"""
         <div class="finding-card {risk}">
-            <strong>{finding['clause']}</strong>
+            <strong>{clause_escaped}</strong>
             {get_risk_pill(risk)}
             <p style="margin: 0.5rem 0; font-size: 0.9rem; color: #374151;">
-                {finding['finding']}
+                {finding_escaped}
             </p>
         """, unsafe_allow_html=True)
         
         if finding.get('asc_606_reference'):
-            st.markdown(f'<span class="asc-reference">{finding["asc_606_reference"]}</span>', unsafe_allow_html=True)
+            asc_ref_escaped = html.escape(finding['asc_606_reference'])
+            st.markdown(f'<span class="asc-reference">{asc_ref_escaped}</span>', unsafe_allow_html=True)
         
         if finding.get('exact_quote'):
-            st.markdown(f'<div class="contract-quote">"{finding["exact_quote"][:150]}..."</div>', unsafe_allow_html=True)
+            quote_escaped = html.escape(finding['exact_quote'][:150])
+            st.markdown(f'<div class="contract-quote">"{quote_escaped}..."</div>', unsafe_allow_html=True)
         
         if finding.get('suggested_revision'):
-            st.markdown(f'<p style="font-size: 0.8rem; color: #059669; margin: 0.5rem 0 0 0;"><strong>💡 Suggested:</strong> {finding["suggested_revision"]}</p>', unsafe_allow_html=True)
+            revision_escaped = html.escape(finding['suggested_revision'])
+            st.markdown(f'<p style="font-size: 0.8rem; color: #059669; margin: 0.5rem 0 0 0;"><strong>💡 Suggested:</strong> {revision_escaped}</p>', unsafe_allow_html=True)
         
         st.markdown("</div>", unsafe_allow_html=True)
     
@@ -562,14 +224,16 @@ def render_verdict(verdict: dict, contract_name: str):
     </div>
     """, unsafe_allow_html=True)
     
-    # Reasoning
+    # Reasoning - escape LLM/demo content
     st.markdown("### 🎯 Resolver Reasoning")
-    st.markdown(f"> {verdict['reasoning']}")
+    reasoning_escaped = html.escape(verdict.get('reasoning', ''))
+    st.markdown(f"> {reasoning_escaped}")
     
-    # Key factors
+    # Key factors - escape LLM/demo content
     st.markdown("### 🔑 Key Factors")
     for factor in verdict.get('key_factors', []):
-        st.markdown(f"• {factor}")
+        factor_escaped = html.escape(factor)
+        st.markdown(f"• {factor_escaped}")
 
 
 def render_investigation_trace(trace: list):
@@ -587,10 +251,14 @@ def render_investigation_trace(trace: list):
             else:
                 status_class = "step-info"
             
+            # Escape demo/LLM content
+            tool_escaped = html.escape(step.get('tool', ''))
+            summary_escaped = html.escape(summary)
+            
             st.markdown(f"""
             <div class="investigation-step">
-                • <strong>Step {step['step']}:</strong> {step['tool']}
-                <span class="{status_class}">[{summary}]</span>
+                • <strong>Step {step['step']}:</strong> {tool_escaped}
+                <span class="{status_class}">[{summary_escaped}]</span>
             </div>
             """, unsafe_allow_html=True)
 
