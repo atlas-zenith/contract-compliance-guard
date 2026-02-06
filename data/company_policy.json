@@ -1,0 +1,50 @@
+{
+  "payment_terms_max_days": 60,
+  "return_period_max_days": 30,
+  "auto_escalation_max_percent": 3,
+  "variable_consideration_threshold_percent": 10,
+  "milestone_payment_requires_review": true,
+  "requires_legal_review": [
+    "unlimited_liability",
+    "indemnification",
+    "non_compete",
+    "most_favored_customer",
+    "price_protection",
+    "consignment"
+  ],
+  "auto_reject_clauses": [
+    "unlimited_liability",
+    "consignment_without_transfer"
+  ],
+  "risk_score_thresholds": {
+    "low": 30,
+    "medium": 60,
+    "high": 100
+  },
+  "asc_606_risk_factors": {
+    "extended_payment_terms": {
+      "description": "Payment terms exceeding 60 days may indicate financing component",
+      "reference": "ASC 606-10-32-15"
+    },
+    "right_of_return": {
+      "description": "Unconditional returns affect variable consideration estimates",
+      "reference": "ASC 606-10-55-22"
+    },
+    "price_protection": {
+      "description": "MFC clauses create variable consideration",
+      "reference": "ASC 606-10-32-5"
+    },
+    "milestone_payments": {
+      "description": "Contingent payments require constraint analysis",
+      "reference": "ASC 606-10-32-11"
+    },
+    "consignment": {
+      "description": "May not meet control transfer criteria",
+      "reference": "ASC 606-10-25-30"
+    },
+    "bill_and_hold": {
+      "description": "Specific criteria must be met for revenue recognition",
+      "reference": "ASC 606-10-55-83"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+# Contract Compliance Guard - Dependencies
+
+# Core
+streamlit>=1.31.0
+python-dotenv>=1.0.0
+
+# AI/LLM (optional - for live mode)
+langchain>=0.1.0
+langchain-anthropic>=0.1.0
+langgraph>=0.0.20
+
+# Data
+pandas>=2.0.0
+
+# Utilities
+pathlib>=1.0.1

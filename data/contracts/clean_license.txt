@@ -1,0 +1,69 @@
+SOFTWARE LICENSE AGREEMENT
+
+PARTIES:
+- Licensor: DataTools Software Inc. ("Licensor")
+- Licensee: Smith & Associates CPA Firm ("Licensee")
+
+EFFECTIVE DATE: January 1, 2024
+TERM: Perpetual License
+
+1. GRANT OF LICENSE
+Licensor grants Licensee a non-exclusive, perpetual, non-transferable license 
+to use the DataTools Analytics Suite ("Software") for Licensee's internal 
+business purposes.
+
+2. LICENSE SCOPE
+- Licensed users: Up to 25 named users
+- Installation: Single site (123 Main Street, Anytown, USA)
+- Use: Internal business use only; no redistribution
+
+3. FEES
+- One-time license fee: $75,000
+- Payment: Due upon execution of this Agreement
+- Payment terms: Net 30 days
+
+4. MAINTENANCE AND SUPPORT
+- First year maintenance included with license
+- Annual maintenance fee (Year 2+): $15,000 per year
+- Maintenance includes: Software updates, patches, and help desk support
+- Maintenance is optional after Year 1
+
+5. DELIVERY
+Licensor shall provide download access to Software within 5 business days 
+of payment receipt.
+
+6. INTELLECTUAL PROPERTY
+- Licensor retains all rights, title, and interest in the Software
+- Licensee may not modify, reverse engineer, or create derivative works
+- Licensee may make one backup copy for archival purposes
+
+7. WARRANTIES
+Licensor warrants that:
+- Software will substantially perform per documentation for 90 days
+- Licensor has the right to grant this license
+- Software does not infringe third-party IP rights
+
+8. WARRANTY REMEDY
+Licensee's exclusive remedy for breach of warranty is repair or replacement 
+of the Software, or refund of the license fee at Licensor's option.
+
+9. LIMITATION OF LIABILITY
+- Licensor's total liability shall not exceed the license fee paid
+- Neither party liable for indirect, consequential, or punitive damages
+
+10. TERMINATION
+- License is perpetual unless terminated
+- Licensor may terminate for material breach with 30 days notice to cure
+- Upon termination, Licensee shall destroy all copies of Software
+
+11. GOVERNING LAW
+This Agreement is governed by the laws of the State of California.
+
+12. ENTIRE AGREEMENT
+This Agreement constitutes the entire agreement between the parties.
+No modification valid unless in writing signed by both parties.
+
+SIGNATURES:
+_________________________ _________________________
+DataTools Software Inc.    Smith & Associates CPA Firm
+Date: January 1, 2024      Date: January 1, 2024

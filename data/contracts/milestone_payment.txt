@@ -1,0 +1,84 @@
+CUSTOM SOFTWARE DEVELOPMENT AGREEMENT
+
+PARTIES:
+- Developer: AgileCode Technologies Inc. ("Developer")
+- Client: Healthcare Innovations Group ("Client")
+
+EFFECTIVE DATE: January 15, 2024
+PROJECT COMPLETION TARGET: September 30, 2024
+
+1. PROJECT SCOPE
+Developer shall design, develop, and deploy a custom Patient Management System 
+("System") as specified in the Statement of Work (Exhibit A).
+
+2. PROJECT PHASES AND DELIVERABLES
+Phase 1: Requirements & Design (8 weeks)
+Phase 2: Core Development (12 weeks)
+Phase 3: Integration & Testing (8 weeks)
+Phase 4: Deployment & Training (4 weeks)
+
+3. FEES AND MILESTONE PAYMENTS
+
+*** MILESTONE-BASED PAYMENT SCHEDULE ***
+
+Total Project Fee: $800,000
+
+Payments are contingent upon successful completion and Client acceptance of 
+each milestone:
+
+Milestone 1 - Project Kickoff
+- Amount: $80,000 (10%)
+- Due: Upon contract execution
+- Deliverable: Project charter and team assignment
+
+Milestone 2 - Requirements Sign-Off
+- Amount: $120,000 (15%)
+- Due: Upon Client approval of requirements document
+- Contingency: Client must approve within 10 business days of delivery
+
+Milestone 3 - Design Approval
+- Amount: $120,000 (15%)
+- Due: Upon Client approval of system design
+- Contingency: Approval based on design review meeting
+
+Milestone 4 - Alpha Release
+- Amount: $160,000 (20%)
+- Due: Upon successful demonstration of core functionality
+- Contingency: Must pass 80% of defined test cases
+
+Milestone 5 - Beta Release
+- Amount: $160,000 (20%)
+- Due: Upon completion of UAT environment
+- Contingency: No critical defects outstanding
+
+Milestone 6 - Go-Live & Acceptance
+- Amount: $160,000 (20%)
+- Due: 30 days after successful production deployment
+- Contingency: System must achieve 99% uptime for 30 days
+
+*** PAYMENT RELEASE SUBJECT TO CLIENT WRITTEN ACCEPTANCE ***
+
+All milestone payments require formal written acceptance from Client's Project 
+Sponsor. Developer shall not invoice until acceptance is received.
+
+4. CHANGE ORDERS
+Additional work outside scope requires written change order with agreed pricing.
+
+5. INTELLECTUAL PROPERTY
+Upon final payment, Client shall own all custom code developed specifically 
+for this project. Developer retains rights to pre-existing tools and libraries.
+
+6. WARRANTIES
+Developer warrants the System will perform per specifications for 12 months.
+
+7. LIMITATION OF LIABILITY
+Developer's liability limited to fees actually paid under this Agreement.
+
+8. TERMINATION
+Client may terminate for convenience with 30 days notice. 
+Developer entitled to payment for accepted milestones plus work in progress.
+
+SIGNATURES:
+_________________________ _________________________
+AgileCode Technologies     Healthcare Innovations Group
+Date: January 15, 2024     Date: January 15, 2024

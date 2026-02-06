@@ -1,0 +1,59 @@
+ENTERPRISE SOFTWARE LICENSE AND SERVICES AGREEMENT
+
+PARTIES:
+- Licensor: TechVenture Systems LLC ("Licensor")
+- Licensee: Global Manufacturing Corp. ("Licensee")
+
+EFFECTIVE DATE: February 15, 2024
+TERM: 36 months
+
+1. LICENSE GRANT
+Licensor grants Licensee a non-exclusive, non-transferable license to use the 
+TechVenture ERP Suite ("Software") for Licensee's internal business operations.
+
+2. FEES AND PAYMENT TERMS
+- Total license fee: $450,000
+- Implementation services: $75,000
+- Annual maintenance: $90,000
+
+PAYMENT SCHEDULE:
+- 10% upon contract signing ($52,500)
+- 20% upon delivery ($105,000)
+- 70% due Net 120 days from Go-Live date ($367,500)
+
+*** EXTENDED PAYMENT TERMS: The remaining balance of $367,500 is due 120 days 
+after system go-live, which is anticipated to be June 1, 2024. This extended 
+payment period is provided to allow Licensee adequate time to validate system 
+functionality and realize initial operational benefits. ***
+
+3. IMPLEMENTATION TIMELINE
+- Phase 1 (Configuration): 60 days
+- Phase 2 (Testing): 30 days  
+- Phase 3 (Go-Live): Target June 1, 2024
+
+4. ACCEPTANCE
+System acceptance shall occur upon successful completion of User Acceptance 
+Testing (UAT) as defined in Exhibit B.
+
+5. MAINTENANCE AND SUPPORT
+- First year maintenance included
+- Subsequent years: $90,000 annually
+- 24/7 technical support hotline
+- Quarterly software updates
+
+6. TERMINATION
+Either party may terminate for material breach with 30 days written notice 
+and opportunity to cure.
+
+7. LIABILITY
+Licensor's total liability shall not exceed the license fees paid under 
+this Agreement.
+
+8. WARRANTIES
+Licensor warrants the Software will perform substantially in accordance with 
+documentation for 12 months from Go-Live.
+
+SIGNATURES:
+_________________________ _________________________
+TechVenture Systems LLC    Global Manufacturing Corp.
+Date: February 15, 2024    Date: February 15, 2024

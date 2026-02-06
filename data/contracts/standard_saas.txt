@@ -1,0 +1,53 @@
+SOFTWARE AS A SERVICE AGREEMENT
+
+PARTIES:
+- Provider: CloudSoft Solutions Inc. ("Provider")
+- Customer: Acme Corporation ("Customer")
+
+EFFECTIVE DATE: January 1, 2024
+TERM: 12 months (January 1, 2024 - December 31, 2024)
+
+1. SERVICES
+Provider agrees to provide Customer access to the CloudSoft Enterprise Platform 
+("Service") as described in Exhibit A.
+
+2. FEES AND PAYMENT
+- Annual subscription fee: $120,000
+- Payment terms: Net 30 days from invoice date
+- Invoicing: Quarterly in advance ($30,000 per quarter)
+
+3. TERM AND TERMINATION
+- Initial term: 12 months
+- Renewal: Automatic annual renewal unless either party provides 60 days written notice
+- Annual price adjustment: CPI-based, capped at 3% per year
+
+4. SERVICE LEVEL AGREEMENT
+- Uptime guarantee: 99.9%
+- Support response: 4 hours for critical issues
+- Credits for downtime: Pro-rata for downtime exceeding SLA
+
+5. DATA AND SECURITY
+- Provider maintains SOC 2 Type II certification
+- Customer data remains Customer property
+- Data deletion within 30 days of termination upon request
+
+6. LIMITATION OF LIABILITY
+Each party's total liability under this Agreement shall not exceed the total fees 
+paid or payable by Customer in the 12 months preceding the claim.
+
+7. INTELLECTUAL PROPERTY
+- Provider retains all IP rights in the Service
+- Customer retains all rights in Customer Data
+- Limited license granted for Service use during term
+
+8. CONFIDENTIALITY
+Standard mutual confidentiality provisions apply. 
+Confidential information excludes publicly available information.
+
+9. GOVERNING LAW
+This Agreement shall be governed by the laws of the State of Delaware.
+
+SIGNATURES:
+_________________________ _________________________
+CloudSoft Solutions Inc.   Acme Corporation
+Date: January 1, 2024      Date: January 1, 2024

@@ -1,0 +1,719 @@
+{
+  "standard_saas": {
+    "contract_name": "Standard SaaS Agreement",
+    "parties": {
+      "provider": "CloudSoft Solutions Inc.",
+      "customer": "Acme Corporation"
+    },
+    "effective_date": "2024-01-01",
+    "term_months": 12,
+    "total_value": 120000,
+    "extracted_terms": {
+      "payment_terms_days": 30,
+      "return_period_days": 0,
+      "auto_renewal": true,
+      "annual_escalation_percent": 3,
+      "liability_cap": "12 months fees",
+      "termination_notice_days": 60
+    },
+    "advocate_arguments": [
+      {
+        "point": "Standard Payment Terms",
+        "argument": "Net 30 payment terms are well within industry norms and our 60-day policy threshold. This presents no cash flow or financing component concerns.",
+        "strength": "strong"
+      },
+      {
+        "point": "Reasonable Liability Cap",
+        "argument": "Liability is capped at 12 months of fees ($120,000), which is proportionate to contract value and provides adequate protection.",
+        "strength": "strong"
+      },
+      {
+        "point": "Fair Renewal Terms",
+        "argument": "Auto-renewal with 60-day notice and CPI-based increases capped at 3% is standard practice and well below our 3% policy threshold.",
+        "strength": "strong"
+      },
+      {
+        "point": "Clear IP and Data Rights",
+        "argument": "Customer retains ownership of their data with clear deletion terms. No unusual IP transfers or encumbrances.",
+        "strength": "strong"
+      }
+    ],
+    "auditor_findings": [
+      {
+        "clause": "Auto-renewal with annual price adjustment",
+        "risk_level": "low",
+        "finding": "While auto-renewal exists, the 3% cap on annual increases is at our policy limit. Recommend monitoring.",
+        "asc_606_reference": null,
+        "exact_quote": "Annual price adjustment: CPI-based, capped at 3% per year",
+        "suggested_revision": null
+      }
+    ],
+    "resolver_verdict": {
+      "risk_score": 18,
+      "confidence": 95,
+      "recommendation": "approve",
+      "reasoning": "This is a well-structured SaaS agreement with standard commercial terms. Payment terms are favorable (Net 30), liability is appropriately capped, and renewal terms are reasonable. The 3% escalation cap exactly matches our policy threshold but includes CPI linkage which typically results in lower actual increases. No ASC 606 concerns identified - revenue can be recognized ratably over the service period.",
+      "key_factors": [
+        "Payment terms (Net 30) well within policy",
+        "Standard liability cap at 12 months fees",
+        "Auto-renewal at policy threshold but with reasonable CPI basis",
+        "Clear service delivery and acceptance terms"
+      ]
+    },
+    "trace": [
+      {"step": 1, "tool": "extract_contract_terms", "summary": "Extracted: 12-month SaaS, $120K, Net 30 terms"},
+      {"step": 2, "tool": "check_payment_terms", "summary": "✓ Net 30 within 60-day policy limit"},
+      {"step": 3, "tool": "check_return_rights", "summary": "✓ No return provisions (SaaS model)"},
+      {"step": 4, "tool": "check_variable_consideration", "summary": "✓ Fixed pricing, no variable elements"},
+      {"step": 5, "tool": "generate_advocate_argument", "summary": "Built case: standard terms, low risk"},
+      {"step": 6, "tool": "generate_auditor_findings", "summary": "Found: 1 minor observation"},
+      {"step": 7, "tool": "resolve_debate", "summary": "Verdict: APPROVE (score 18/100)"}
+    ]
+  },
+
+  "extended_payment": {
+    "contract_name": "Enterprise Software License Agreement",
+    "parties": {
+      "provider": "TechVenture Systems LLC",
+      "customer": "Global Manufacturing Corp."
+    },
+    "effective_date": "2024-02-15",
+    "term_months": 36,
+    "total_value": 525000,
+    "extracted_terms": {
+      "payment_terms_days": 120,
+      "return_period_days": 0,
+      "auto_renewal": false,
+      "annual_escalation_percent": 0,
+      "liability_cap": "license fees paid",
+      "termination_notice_days": 30,
+      "milestone_based": false,
+      "acceptance_criteria": "UAT completion"
+    },
+    "advocate_arguments": [
+      {
+        "point": "Significant Upfront Payment",
+        "argument": "30% of contract value ($157,500) is due before go-live, demonstrating customer commitment and reducing default risk.",
+        "strength": "moderate"
+      },
+      {
+        "point": "Standard Enterprise Software Model",
+        "argument": "Extended payment terms are common for large enterprise implementations where the customer needs time to validate functionality. This is industry practice.",
+        "strength": "moderate"
+      },
+      {
+        "point": "Clear Acceptance Criteria",
+        "argument": "Payment is tied to defined UAT acceptance, not arbitrary customer discretion. This provides objective milestone.",
+        "strength": "strong"
+      },
+      {
+        "point": "No Return or Refund Rights",
+        "argument": "Once accepted, there are no return provisions. This supports revenue recognition upon acceptance.",
+        "strength": "strong"
+      }
+    ],
+    "auditor_findings": [
+      {
+        "clause": "Net 120 payment terms",
+        "risk_level": "medium",
+        "finding": "Payment terms of 120 days significantly exceed our 60-day policy threshold. Per ASC 606-10-32-15, payment terms exceeding one year may indicate a significant financing component requiring separation.",
+        "asc_606_reference": "ASC 606-10-32-15",
+        "exact_quote": "70% due Net 120 days from Go-Live date ($367,500)",
+        "suggested_revision": "Reduce to Net 60 or implement progress payments. If extended terms required, consider whether significant financing component exists."
+      },
+      {
+        "clause": "Large concentration in final payment",
+        "risk_level": "medium",
+        "finding": "70% of contract value ($367,500) contingent on a single milestone creates collection risk and may require constraint on variable consideration estimate.",
+        "asc_606_reference": "ASC 606-10-32-11",
+        "exact_quote": "70% due Net 120 days from Go-Live date",
+        "suggested_revision": "Restructure to more balanced milestone payments (e.g., 25-25-25-25 split)"
+      }
+    ],
+    "resolver_verdict": {
+      "risk_score": 52,
+      "confidence": 82,
+      "recommendation": "legal_review",
+      "reasoning": "The Net 120 payment terms exceed policy thresholds and warrant Finance/Legal review. While 120 days doesn't trigger the 1-year financing component threshold under ASC 606, it creates cash flow risk and exceeds our internal policy by 60 days. The concentration of 70% in the final payment also increases collection risk. However, the clear acceptance criteria and 30% upfront payment provide some mitigation. Recommend negotiating better terms or obtaining Finance approval for exception.",
+      "key_factors": [
+        "Net 120 terms exceed 60-day policy by 100%",
+        "70% payment concentration in final milestone",
+        "Clear UAT acceptance criteria provide some protection",
+        "Standard enterprise software structure otherwise"
+      ]
+    },
+    "trace": [
+      {"step": 1, "tool": "extract_contract_terms", "summary": "Extracted: 36-month license, $525K, Net 120 terms"},
+      {"step": 2, "tool": "check_payment_terms", "summary": "⚠ Net 120 exceeds 60-day policy limit"},
+      {"step": 3, "tool": "check_return_rights", "summary": "✓ No return provisions"},
+      {"step": 4, "tool": "check_variable_consideration", "summary": "⚠ 70% in final payment creates risk"},
+      {"step": 5, "tool": "generate_advocate_argument", "summary": "Built case: industry standard, UAT-based"},
+      {"step": 6, "tool": "generate_auditor_findings", "summary": "Found: 2 medium risk issues"},
+      {"step": 7, "tool": "resolve_debate", "summary": "Verdict: LEGAL REVIEW (score 52/100)"}
+    ]
+  },
+
+  "right_of_return": {
+    "contract_name": "Product Distribution Agreement",
+    "parties": {
+      "provider": "Premier Electronics Inc.",
+      "customer": "National Tech Distributors LLC"
+    },
+    "effective_date": "2024-03-01",
+    "term_months": 24,
+    "total_value": 2000000,
+    "extracted_terms": {
+      "payment_terms_days": 45,
+      "return_period_days": 90,
+      "auto_renewal": false,
+      "annual_escalation_percent": 0,
+      "liability_cap": "standard indemnification",
+      "termination_notice_days": 90,
+      "unconditional_return": true,
+      "return_for_any_reason": true
+    },
+    "advocate_arguments": [
+      {
+        "point": "Industry Standard for Distribution",
+        "argument": "Return rights are common in distribution agreements. Distributors need protection against market changes and slow-moving inventory.",
+        "strength": "weak"
+      },
+      {
+        "point": "Products Must Be Unopened",
+        "argument": "Returns are limited to products in original, unopened packaging, which restricts the scope and reduces abuse potential.",
+        "strength": "moderate"
+      },
+      {
+        "point": "Strong Minimum Commitment",
+        "argument": "The $2M annual minimum purchase commitment demonstrates serious buyer intent and reduces likelihood of mass returns.",
+        "strength": "moderate"
+      },
+      {
+        "point": "Reasonable Payment Terms",
+        "argument": "Net 45 payment terms are within policy and provide adequate cash flow protection.",
+        "strength": "strong"
+      }
+    ],
+    "auditor_findings": [
+      {
+        "clause": "90-day unconditional right of return",
+        "risk_level": "high",
+        "finding": "Unconditional return rights for 90 days significantly exceed our 30-day policy threshold. Per ASC 606-10-55-22, this creates variable consideration that must be estimated and constrained. Revenue cannot be fully recognized until return period expires or reliable estimate can be made.",
+        "asc_606_reference": "ASC 606-10-55-22",
+        "exact_quote": "Products may be returned within NINETY (90) DAYS of delivery... No Questions Asked: Returns accepted for any reason",
+        "suggested_revision": "Reduce return period to 30 days maximum, or convert to restocking fee model (15-25% fee) to discourage frivolous returns"
+      },
+      {
+        "clause": "No restocking fee",
+        "risk_level": "high",
+        "finding": "Full credit with no restocking fee creates significant financial exposure. Combined with 'any reason' returns, this effectively converts the sale to consignment-like risk profile.",
+        "asc_606_reference": "ASC 606-10-55-25",
+        "exact_quote": "Credit: Full purchase price credit, no restocking fee",
+        "suggested_revision": "Implement minimum 15% restocking fee for returns, or require documented defect/damage for full credit"
+      },
+      {
+        "clause": "Supplier pays return shipping",
+        "risk_level": "medium",
+        "finding": "Return shipping at supplier's expense further incentivizes returns and increases total cost of returns.",
+        "asc_606_reference": null,
+        "exact_quote": "Shipping: Supplier pays return shipping costs",
+        "suggested_revision": "Distributor should bear return shipping costs unless product is defective"
+      },
+      {
+        "clause": "Inventory protection clause",
+        "risk_level": "medium",
+        "finding": "Repurchase obligation for discontinued products creates additional contingent liability not reflected in standard revenue recognition.",
+        "asc_606_reference": "ASC 606-10-55-25",
+        "exact_quote": "Supplier will repurchase remaining inventory at Distributor's cost",
+        "suggested_revision": "Limit repurchase to inventory ordered within 90 days of discontinuation notice"
+      }
+    ],
+    "resolver_verdict": {
+      "risk_score": 85,
+      "confidence": 92,
+      "recommendation": "reject",
+      "reasoning": "The 90-day unconditional return right with no restocking fee creates unacceptable revenue recognition risk under ASC 606. This provision essentially gives the distributor a free option to return inventory, which may require us to defer significant revenue until returns can be reliably estimated or the return period expires. The 'any reason' language and supplier-paid return shipping further compound the risk. This contract should be rejected in its current form and renegotiated with a 30-day return window and meaningful restocking fees.",
+      "key_factors": [
+        "90-day return period is 3x our 30-day policy limit",
+        "Unconditional 'any reason' returns create unpredictable liability",
+        "No restocking fee removes financial disincentive for returns",
+        "ASC 606 requires revenue deferral or significant estimation uncertainty"
+      ]
+    },
+    "trace": [
+      {"step": 1, "tool": "extract_contract_terms", "summary": "Extracted: Distribution, $2M min, 90-day returns"},
+      {"step": 2, "tool": "check_payment_terms", "summary": "✓ Net 45 within policy"},
+      {"step": 3, "tool": "check_return_rights", "summary": "🔴 90-day unconditional returns - HIGH RISK"},
+      {"step": 4, "tool": "check_variable_consideration", "summary": "🔴 No restocking fee amplifies risk"},
+      {"step": 5, "tool": "generate_advocate_argument", "summary": "Built case: limited strength arguments"},
+      {"step": 6, "tool": "generate_auditor_findings", "summary": "Found: 4 issues (2 high, 2 medium)"},
+      {"step": 7, "tool": "resolve_debate", "summary": "Verdict: REJECT (score 85/100)"}
+    ]
+  },
+
+  "milestone_payment": {
+    "contract_name": "Custom Software Development Agreement",
+    "parties": {
+      "provider": "AgileCode Technologies Inc.",
+      "customer": "Healthcare Innovations Group"
+    },
+    "effective_date": "2024-01-15",
+    "term_months": 9,
+    "total_value": 800000,
+    "extracted_terms": {
+      "payment_terms_days": 30,
+      "return_period_days": 0,
+      "auto_renewal": false,
+      "annual_escalation_percent": 0,
+      "liability_cap": "fees paid",
+      "termination_notice_days": 30,
+      "milestone_based": true,
+      "number_of_milestones": 6,
+      "client_acceptance_required": true
+    },
+    "advocate_arguments": [
+      {
+        "point": "Clear Milestone Definitions",
+        "argument": "Each milestone has specific, measurable deliverables (requirements doc, design approval, test pass rates, uptime). This provides objective acceptance criteria.",
+        "strength": "strong"
+      },
+      {
+        "point": "Balanced Payment Distribution",
+        "argument": "Payments are reasonably distributed: 10-15-15-20-20-20. No single milestone carries disproportionate risk.",
+        "strength": "strong"
+      },
+      {
+        "point": "Standard Custom Development Model",
+        "argument": "Milestone-based payments are industry standard for custom software. They align payment with value delivery and reduce customer risk.",
+        "strength": "strong"
+      },
+      {
+        "point": "IP Transfer Upon Final Payment",
+        "argument": "Clear IP assignment tied to final payment ensures both parties' interests are protected throughout the project.",
+        "strength": "strong"
+      }
+    ],
+    "auditor_findings": [
+      {
+        "clause": "Client written acceptance required for payment",
+        "risk_level": "medium",
+        "finding": "Payments are contingent on client written acceptance, creating variable consideration under ASC 606. Must assess whether acceptance is substantive or perfunctory to determine revenue timing.",
+        "asc_606_reference": "ASC 606-10-32-11",
+        "exact_quote": "All milestone payments require formal written acceptance from Client's Project Sponsor",
+        "suggested_revision": "Add deemed acceptance clause (e.g., 'If Client does not respond within 10 business days, milestone is deemed accepted')"
+      },
+      {
+        "clause": "Contingent go-live payment",
+        "risk_level": "medium",
+        "finding": "Final 20% ($160,000) is contingent on 99% uptime for 30 days post-deployment. This is a performance warranty that may require constraint on variable consideration or extended deferral.",
+        "asc_606_reference": "ASC 606-10-32-12",
+        "exact_quote": "System must achieve 99% uptime for 30 days",
+        "suggested_revision": "Reduce uptime requirement to 95% or limit measurement period to 14 days"
+      },
+      {
+        "clause": "Multiple performance obligations",
+        "risk_level": "low",
+        "finding": "Contract may contain multiple performance obligations (software, implementation, training) requiring allocation of transaction price. Analysis needed to determine standalone selling prices.",
+        "asc_606_reference": "ASC 606-10-25-14",
+        "exact_quote": "Developer shall design, develop, and deploy a custom Patient Management System",
+        "suggested_revision": "Consider separating deliverables with distinct pricing in future contracts"
+      }
+    ],
+    "resolver_verdict": {
+      "risk_score": 48,
+      "confidence": 78,
+      "recommendation": "legal_review",
+      "reasoning": "While milestone-based payments are appropriate for custom development, the strict acceptance requirements and performance-contingent final payment create ASC 606 considerations. The 30-day uptime requirement for the final $160K is particularly concerning as it extends revenue recognition uncertainty beyond project completion. Recommend Legal/Finance review to determine proper revenue recognition treatment - likely over time recognition with final milestone constraint until acceptance is received.",
+      "key_factors": [
+        "Written acceptance requirement creates contingent consideration",
+        "30-day uptime requirement for final payment extends uncertainty",
+        "Well-defined milestones support over-time recognition",
+        "Multiple performance obligation analysis may be required"
+      ]
+    },
+    "trace": [
+      {"step": 1, "tool": "extract_contract_terms", "summary": "Extracted: 9-month dev project, $800K, 6 milestones"},
+      {"step": 2, "tool": "check_payment_terms", "summary": "✓ Standard milestone structure"},
+      {"step": 3, "tool": "check_return_rights", "summary": "✓ No return provisions"},
+      {"step": 4, "tool": "check_variable_consideration", "summary": "⚠ Acceptance-contingent payments"},
+      {"step": 5, "tool": "generate_advocate_argument", "summary": "Built case: clear milestones, balanced payments"},
+      {"step": 6, "tool": "generate_auditor_findings", "summary": "Found: 3 issues (2 medium, 1 low)"},
+      {"step": 7, "tool": "resolve_debate", "summary": "Verdict: LEGAL REVIEW (score 48/100)"}
+    ]
+  },
+
+  "price_protection": {
+    "contract_name": "Strategic Supply Agreement",
+    "parties": {
+      "provider": "Industrial Components Corp.",
+      "customer": "AutoMakers International Inc."
+    },
+    "effective_date": "2024-04-01",
+    "term_months": 60,
+    "total_value": 22500000,
+    "extracted_terms": {
+      "payment_terms_days": 30,
+      "return_period_days": 0,
+      "auto_renewal": false,
+      "annual_escalation_percent": 5,
+      "liability_cap": "indemnification only",
+      "termination_notice_days": 180,
+      "price_protection": true,
+      "mfc_clause": true,
+      "retroactive_adjustments": true
+    },
+    "advocate_arguments": [
+      {
+        "point": "Standard Automotive Industry Practice",
+        "argument": "MFC clauses are standard in long-term automotive supply agreements. OEMs require price certainty and competitive positioning.",
+        "strength": "weak"
+      },
+      {
+        "point": "Significant Contract Value",
+        "argument": "The $22.5M annual value and 5-year term represent strategic importance that may justify accepting some pricing risk.",
+        "strength": "moderate"
+      },
+      {
+        "point": "Predictable Volume Commitment",
+        "argument": "500,000 unit annual volume provides manufacturing efficiency and cost predictability that can offset price concessions.",
+        "strength": "moderate"
+      },
+      {
+        "point": "Exclusivity Protection",
+        "argument": "Restriction on supplying competitors provides some protection against price pressure from competitive dynamics.",
+        "strength": "moderate"
+      }
+    ],
+    "auditor_findings": [
+      {
+        "clause": "Most Favored Customer guarantee",
+        "risk_level": "high",
+        "finding": "MFC clause creates open-ended variable consideration. Any price reduction to any customer triggers automatic adjustment, making transaction price inherently uncertain under ASC 606-10-32-5.",
+        "asc_606_reference": "ASC 606-10-32-5",
+        "exact_quote": "If Manufacturer offers a lower price to any other customer for the same or substantially similar Components, Manufacturer shall immediately reduce Buyer's price to match",
+        "suggested_revision": "Remove MFC clause entirely, or limit to 'most favored' within specific customer segment with annual cap on adjustments"
+      },
+      {
+        "clause": "Retroactive price adjustments",
+        "risk_level": "high",
+        "finding": "Retroactive application of price reductions to current quarter purchases creates significant constraint on variable consideration estimation. Must defer revenue until quarterly settlement or maintain substantial reserve.",
+        "asc_606_reference": "ASC 606-10-32-8",
+        "exact_quote": "Price reductions shall be applied retroactively to all purchases made in the current calendar quarter",
+        "suggested_revision": "Apply price changes prospectively only, effective next calendar quarter"
+      },
+      {
+        "clause": "Equivalent rebate requirement",
+        "risk_level": "high",
+        "finding": "Requirement to match 'any rebates, incentives, or other price concessions' expands variable consideration beyond direct pricing to include promotional programs.",
+        "asc_606_reference": "ASC 606-10-32-6",
+        "exact_quote": "Any rebates, incentives, or other price concessions offered to other customers shall be offered to Buyer on equivalent terms",
+        "suggested_revision": "Limit to base contract pricing only; exclude promotional, volume, and special programs"
+      },
+      {
+        "clause": "Customer audit rights",
+        "risk_level": "medium",
+        "finding": "Annual audit rights create administrative burden and potential for disputes over price comparability.",
+        "asc_606_reference": null,
+        "exact_quote": "Buyer may audit Manufacturer's pricing records annually",
+        "suggested_revision": "Limit audit to independent third-party with confidentiality protections"
+      }
+    ],
+    "resolver_verdict": {
+      "risk_score": 88,
+      "confidence": 90,
+      "recommendation": "reject",
+      "reasoning": "The Most Favored Customer clause with retroactive adjustments creates unquantifiable variable consideration that fundamentally undermines revenue recognition certainty. Under ASC 606, we cannot reliably estimate the transaction price when any future deal with any customer could trigger automatic price reductions. The rebate matching requirement compounds this uncertainty. While MFC clauses exist in the industry, this version is unusually broad (covers all pricing arrangements, all customers, with retroactive effect). This contract must be renegotiated to remove or substantially limit the MFC provisions before acceptance.",
+      "key_factors": [
+        "MFC clause creates unconstrained variable consideration",
+        "Retroactive adjustments prevent reliable revenue recognition",
+        "Rebate matching expands scope beyond direct pricing",
+        "5-year term amplifies cumulative risk exposure"
+      ]
+    },
+    "trace": [
+      {"step": 1, "tool": "extract_contract_terms", "summary": "Extracted: 5-year supply, $22.5M/yr, MFC clause"},
+      {"step": 2, "tool": "check_payment_terms", "summary": "✓ Standard payment terms"},
+      {"step": 3, "tool": "check_return_rights", "summary": "✓ No return provisions"},
+      {"step": 4, "tool": "check_variable_consideration", "summary": "🔴 MFC with retroactive adjustments - HIGH RISK"},
+      {"step": 5, "tool": "generate_advocate_argument", "summary": "Built case: industry practice, strategic value"},
+      {"step": 6, "tool": "generate_auditor_findings", "summary": "Found: 4 issues (3 high, 1 medium)"},
+      {"step": 7, "tool": "resolve_debate", "summary": "Verdict: REJECT (score 88/100)"}
+    ]
+  },
+
+  "auto_renewal": {
+    "contract_name": "Managed IT Services Agreement",
+    "parties": {
+      "provider": "SecureTech Managed Services",
+      "customer": "Regional Healthcare Network"
+    },
+    "effective_date": "2024-05-01",
+    "term_months": 36,
+    "total_value": 3060000,
+    "extracted_terms": {
+      "payment_terms_days": 30,
+      "return_period_days": 0,
+      "auto_renewal": true,
+      "annual_escalation_percent": 5,
+      "liability_cap": "12 months fees",
+      "termination_notice_days": 180,
+      "early_termination_fee": true,
+      "escalation_cap": "none"
+    },
+    "advocate_arguments": [
+      {
+        "point": "Predictable Revenue Stream",
+        "argument": "Auto-renewal ensures service continuity and predictable revenue, which is valuable for both parties in managed services relationships.",
+        "strength": "moderate"
+      },
+      {
+        "point": "Healthcare Requires Stability",
+        "argument": "Healthcare IT requires stable, long-term partnerships. Auto-renewal reduces transition risk and maintains compliance continuity.",
+        "strength": "strong"
+      },
+      {
+        "point": "HIPAA Compliance Investment",
+        "argument": "Significant compliance investment justifies longer commitment. Customer benefits from established security posture.",
+        "strength": "moderate"
+      },
+      {
+        "point": "Standard Service Level Protections",
+        "argument": "Strong SLAs (99.95% uptime, 15-min response) protect customer value regardless of price increases.",
+        "strength": "strong"
+      }
+    ],
+    "auditor_findings": [
+      {
+        "clause": "5% annual escalation with no cap",
+        "risk_level": "medium",
+        "finding": "5% annual increase exceeds our 3% policy threshold by 67%. Compound effect over multiple renewals creates significant cost escalation (Year 6 would be 27.6% above Year 3 rates).",
+        "asc_606_reference": null,
+        "exact_quote": "Upon each automatic renewal, the Monthly Service Fee shall automatically increase by FIVE PERCENT (5%) over the prior term's rate",
+        "suggested_revision": "Cap annual escalation at 3% or CPI, whichever is lower. Consider 10% lifetime cap."
+      },
+      {
+        "clause": "180-day non-renewal notice",
+        "risk_level": "medium",
+        "finding": "Six-month notice requirement creates significant lock-in. Combined with auto-renewal, customer could be committed for up to 18 months before realizing they need to provide notice.",
+        "asc_606_reference": null,
+        "exact_quote": "written notice of non-renewal at least ONE HUNDRED EIGHTY (180) DAYS prior to the end of the then-current term",
+        "suggested_revision": "Reduce notice period to 90 days maximum"
+      },
+      {
+        "clause": "50% early termination fee",
+        "risk_level": "medium",
+        "finding": "Early termination fee of 50% of remaining contract value creates substantial exit barrier. For a customer mid-way through a renewal year, this could equal 6 months of fees.",
+        "asc_606_reference": null,
+        "exact_quote": "Early termination fee: 50% of remaining contract value",
+        "suggested_revision": "Cap early termination fee at 3 months of fees or 25% of remaining value"
+      },
+      {
+        "clause": "No cap on cumulative increases",
+        "risk_level": "medium",
+        "finding": "Absence of any lifetime cap on price increases creates unlimited long-term cost exposure. By Year 10, fees would be 55% higher than initial rate.",
+        "asc_606_reference": null,
+        "exact_quote": "No maximum cap on cumulative increases",
+        "suggested_revision": "Add lifetime cap of 25% above initial contract rate"
+      }
+    ],
+    "resolver_verdict": {
+      "risk_score": 55,
+      "confidence": 85,
+      "recommendation": "legal_review",
+      "reasoning": "The 5% annual escalation without any cap exceeds our policy threshold and creates unfavorable long-term economics. While the contract provides strong SLAs and healthcare compliance, the combination of auto-renewal, 180-day notice, and uncapped escalation creates a concerning lock-in pattern. Recommend negotiating the escalation down to 3% with a 15% lifetime cap, and reducing the notice period to 90 days. The contract itself doesn't raise ASC 606 concerns as services are delivered monthly, but the commercial terms warrant business review.",
+      "key_factors": [
+        "5% escalation exceeds 3% policy threshold",
+        "No cap on cumulative price increases",
+        "180-day notice creates 18-month effective lock-in",
+        "50% early termination fee limits flexibility"
+      ]
+    },
+    "trace": [
+      {"step": 1, "tool": "extract_contract_terms", "summary": "Extracted: 36-month IT services, $3.06M, auto-renewal"},
+      {"step": 2, "tool": "check_payment_terms", "summary": "✓ Net 30 within policy"},
+      {"step": 3, "tool": "check_return_rights", "summary": "✓ Not applicable (services)"},
+      {"step": 4, "tool": "check_variable_consideration", "summary": "⚠ 5% annual escalation exceeds policy"},
+      {"step": 5, "tool": "generate_advocate_argument", "summary": "Built case: stability, healthcare compliance"},
+      {"step": 6, "tool": "generate_auditor_findings", "summary": "Found: 4 medium risk issues"},
+      {"step": 7, "tool": "resolve_debate", "summary": "Verdict: LEGAL REVIEW (score 55/100)"}
+    ]
+  },
+
+  "consignment": {
+    "contract_name": "Consignment and Distribution Agreement",
+    "parties": {
+      "provider": "LuxuryGoods Manufacturing Ltd.",
+      "customer": "Elite Retail Partners Inc."
+    },
+    "effective_date": "2024-06-01",
+    "term_months": 24,
+    "total_value": 2500000,
+    "extracted_terms": {
+      "payment_terms_days": 30,
+      "return_period_days": 0,
+      "auto_renewal": false,
+      "annual_escalation_percent": 0,
+      "liability_cap": "product value",
+      "termination_notice_days": 60,
+      "consignment": true,
+      "title_retention": true,
+      "no_minimum_purchase": true
+    },
+    "advocate_arguments": [
+      {
+        "point": "Premium Brand Protection",
+        "argument": "Consignment ensures products are displayed properly in premium retail environments, protecting brand value.",
+        "strength": "weak"
+      },
+      {
+        "point": "Reduced Customer Default Risk",
+        "argument": "Since we retain title until sale, there's no accounts receivable risk from retailer financial difficulties.",
+        "strength": "moderate"
+      },
+      {
+        "point": "Insurance Requirements",
+        "argument": "Full retail value insurance with Consignor as loss payee provides asset protection.",
+        "strength": "moderate"
+      },
+      {
+        "point": "Strong Commission Structure",
+        "argument": "35% commission to retailer leaves 65% for manufacturer, which may be acceptable for luxury goods.",
+        "strength": "moderate"
+      }
+    ],
+    "auditor_findings": [
+      {
+        "clause": "Title retention until sale to end consumer",
+        "risk_level": "high",
+        "finding": "Consignment arrangement where title does not transfer until sale to end consumer fails the 'transfer of control' requirement under ASC 606-10-25-30. Revenue CANNOT be recognized upon delivery to Consignee.",
+        "asc_606_reference": "ASC 606-10-25-30",
+        "exact_quote": "Consignor retains full legal title to all consigned Products until sale to an end consumer",
+        "suggested_revision": "Convert to traditional distribution with title transfer upon delivery, or implement sell-through reporting for proper revenue timing"
+      },
+      {
+        "clause": "No payment obligation until sale",
+        "risk_level": "high",
+        "finding": "Absence of payment obligation until end-consumer sale confirms this is true consignment with no revenue recognition until sell-through.",
+        "asc_606_reference": "ASC 606-10-55-80",
+        "exact_quote": "Consignee shall have no obligation to pay for Products until such Products are sold to an end consumer",
+        "suggested_revision": "Require minimum periodic payments regardless of sell-through"
+      },
+      {
+        "clause": "Unlimited return/recall rights",
+        "risk_level": "high",
+        "finding": "Consignor's ability to recall unsold inventory at any time, combined with no minimum purchase obligation, means there is no committed transaction.",
+        "asc_606_reference": "ASC 606-10-55-1",
+        "exact_quote": "Consignor may recall unsold inventory at any time... Consignee has no obligation to purchase any minimum quantity",
+        "suggested_revision": "Eliminate or limit recall rights; establish minimum purchase commitment"
+      },
+      {
+        "clause": "Risk of loss without title transfer",
+        "risk_level": "medium",
+        "finding": "Risk of loss transfers to Consignee but title does not. This creates accounting complexity but doesn't change the fundamental consignment nature.",
+        "asc_606_reference": "ASC 606-10-25-30",
+        "exact_quote": "Risk of loss or damage to Products transfers to Consignee upon delivery, HOWEVER title does NOT transfer",
+        "suggested_revision": "Align risk of loss with title transfer in a traditional distribution model"
+      }
+    ],
+    "resolver_verdict": {
+      "risk_score": 92,
+      "confidence": 95,
+      "recommendation": "reject",
+      "reasoning": "This is a true consignment arrangement that fails ASC 606 revenue recognition criteria. Under ASC 606-10-25-30, control does not transfer because: (1) Consignor retains title until end-consumer sale, (2) Consignee has no payment obligation until sale, (3) Consignor can recall inventory at will, and (4) Consignee has no minimum purchase commitment. Revenue can ONLY be recognized as products are sold through to end consumers, requiring sell-through reporting. From a business perspective, this transfers all inventory risk to us while giving up control. This structure is unacceptable - must convert to traditional distribution model with title transfer upon delivery.",
+      "key_factors": [
+        "Title retention prevents revenue recognition on delivery",
+        "No payment obligation until end-consumer sale",
+        "Unlimited recall rights eliminate committed transaction",
+        "Zero minimum purchase commitment"
+      ]
+    },
+    "trace": [
+      {"step": 1, "tool": "extract_contract_terms", "summary": "Extracted: 24-month consignment, $2.5M inventory"},
+      {"step": 2, "tool": "check_payment_terms", "summary": "⚠ Payment only on sell-through"},
+      {"step": 3, "tool": "check_return_rights", "summary": "🔴 Unlimited recall rights - TRUE CONSIGNMENT"},
+      {"step": 4, "tool": "check_variable_consideration", "summary": "🔴 No minimum purchase, no committed revenue"},
+      {"step": 5, "tool": "generate_advocate_argument", "summary": "Built case: brand protection, reduced AR risk"},
+      {"step": 6, "tool": "generate_auditor_findings", "summary": "Found: 4 issues (3 high, 1 medium)"},
+      {"step": 7, "tool": "resolve_debate", "summary": "Verdict: REJECT (score 92/100)"}
+    ]
+  },
+
+  "clean_license": {
+    "contract_name": "Software License Agreement",
+    "parties": {
+      "provider": "DataTools Software Inc.",
+      "customer": "Smith & Associates CPA Firm"
+    },
+    "effective_date": "2024-01-01",
+    "term_months": 0,
+    "total_value": 75000,
+    "extracted_terms": {
+      "payment_terms_days": 30,
+      "return_period_days": 0,
+      "auto_renewal": false,
+      "annual_escalation_percent": 0,
+      "liability_cap": "license fee",
+      "termination_notice_days": 30,
+      "perpetual_license": true,
+      "maintenance_optional": true
+    },
+    "advocate_arguments": [
+      {
+        "point": "Clean Perpetual License",
+        "argument": "Single upfront payment for perpetual license provides clear revenue recognition point. No ongoing obligations affect timing.",
+        "strength": "strong"
+      },
+      {
+        "point": "Standard Payment Terms",
+        "argument": "Net 30 payment terms are well within policy. No extended payment or financing concerns.",
+        "strength": "strong"
+      },
+      {
+        "point": "Optional Maintenance",
+        "argument": "Maintenance is separately priced and optional after Year 1, creating clear distinct performance obligation with separate revenue treatment.",
+        "strength": "strong"
+      },
+      {
+        "point": "Appropriate Liability Cap",
+        "argument": "Liability capped at license fee paid ($75,000) is reasonable and standard for software licenses.",
+        "strength": "strong"
+      },
+      {
+        "point": "No Return Rights",
+        "argument": "Exclusive remedy is repair/replace or refund at licensor option. No unconditional return right for customer.",
+        "strength": "strong"
+      }
+    ],
+    "auditor_findings": [
+      {
+        "clause": "90-day warranty period",
+        "risk_level": "low",
+        "finding": "Standard 90-day warranty is typical for software and represents assurance warranty under ASC 606, not a separate performance obligation. No revenue impact.",
+        "asc_606_reference": "ASC 606-10-55-30",
+        "exact_quote": "Software will substantially perform per documentation for 90 days",
+        "suggested_revision": null
+      }
+    ],
+    "resolver_verdict": {
+      "risk_score": 12,
+      "confidence": 98,
+      "recommendation": "approve",
+      "reasoning": "This is a textbook clean software license agreement. The perpetual license with upfront payment allows point-in-time revenue recognition upon delivery and acceptance. Payment terms (Net 30) are standard, liability is appropriately capped, and there are no return rights, extended payment terms, or variable consideration elements. The 90-day warranty is an assurance warranty that doesn't create a separate performance obligation. Maintenance is clearly separable and optional. This contract can be approved without reservation.",
+      "key_factors": [
+        "Clean perpetual license structure",
+        "Standard Net 30 payment terms",
+        "No return rights or variable consideration",
+        "Clearly separable optional maintenance"
+      ]
+    },
+    "trace": [
+      {"step": 1, "tool": "extract_contract_terms", "summary": "Extracted: Perpetual license, $75K, Net 30"},
+      {"step": 2, "tool": "check_payment_terms", "summary": "✓ Net 30 within policy"},
+      {"step": 3, "tool": "check_return_rights", "summary": "✓ No return provisions"},
+      {"step": 4, "tool": "check_variable_consideration", "summary": "✓ Fixed pricing, no variables"},
+      {"step": 5, "tool": "generate_advocate_argument", "summary": "Built case: clean structure, standard terms"},
+      {"step": 6, "tool": "generate_auditor_findings", "summary": "Found: 1 low-risk observation"},
+      {"step": 7, "tool": "resolve_debate", "summary": "Verdict: APPROVE (score 12/100)"}
+    ]
+  }
+}

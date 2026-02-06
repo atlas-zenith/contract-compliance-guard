@@ -1,0 +1,81 @@
+MANAGED IT SERVICES AGREEMENT
+
+PARTIES:
+- Provider: SecureTech Managed Services ("Provider")
+- Customer: Regional Healthcare Network ("Customer")
+
+EFFECTIVE DATE: May 1, 2024
+INITIAL TERM: 36 months
+
+1. SERVICES
+Provider shall provide comprehensive managed IT services including:
+- 24/7 network monitoring
+- Help desk support
+- Security management
+- Backup and disaster recovery
+- Cloud infrastructure management
+
+2. SERVICE LEVELS
+- Network uptime: 99.95%
+- Help desk response: 15 minutes for critical issues
+- Security incident response: Immediate
+
+3. FEES
+- Monthly service fee: $85,000
+- Annual contract value: $1,020,000
+- Total initial term value: $3,060,000
+
+4. PAYMENT
+- Payment terms: Net 30 days
+- Monthly invoicing in arrears
+
+5. TERM AND RENEWAL
+
+*** AUTOMATIC RENEWAL WITH ESCALATION ***
+
+a) INITIAL TERM: This Agreement shall have an initial term of thirty-six (36) 
+   months commencing on the Effective Date.
+
+b) AUTOMATIC RENEWAL: Upon expiration of the Initial Term, this Agreement shall 
+   AUTOMATICALLY RENEW for successive twelve (12) month periods unless either 
+   party provides written notice of non-renewal at least ONE HUNDRED EIGHTY (180) 
+   DAYS prior to the end of the then-current term.
+
+c) PRICE ESCALATION: Upon each automatic renewal, the Monthly Service Fee shall 
+   automatically increase by FIVE PERCENT (5%) over the prior term's rate:
+   
+   - Year 4: $89,250/month ($1,071,000 annual)
+   - Year 5: $93,713/month ($1,124,550 annual)
+   - Year 6: $98,398/month ($1,180,778 annual)
+   - And so forth...
+
+d) NO PRICE CAP: The 5% annual escalation applies to each renewal period with 
+   no maximum cap on cumulative increases.
+
+e) BINDING RENEWAL: Failure to provide timely notice of non-renewal shall 
+   constitute acceptance of the renewal term at the escalated rate.
+
+*** END RENEWAL TERMS ***
+
+6. TERMINATION
+- Termination for cause: 30 days written notice with opportunity to cure
+- Early termination fee: 50% of remaining contract value
+- No termination for convenience during initial term
+
+7. DATA TRANSITION
+Upon termination, Provider shall assist with data migration for up to 90 days 
+at then-current hourly rates.
+
+8. LIMITATION OF LIABILITY
+Provider's liability limited to 12 months of service fees.
+
+9. COMPLIANCE
+Provider maintains HIPAA compliance certification for healthcare customers.
+
+10. INSURANCE
+Provider maintains cyber liability insurance of $5,000,000 per occurrence.
+
+SIGNATURES:
+_________________________ _________________________
+SecureTech Managed Services Regional Healthcare Network
+Date: May 1, 2024          Date: May 1, 2024

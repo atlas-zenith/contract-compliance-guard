@@ -1,0 +1,80 @@
+STRATEGIC SUPPLY AGREEMENT
+
+PARTIES:
+- Manufacturer: Industrial Components Corp. ("Manufacturer")
+- Buyer: AutoMakers International Inc. ("Buyer")
+
+EFFECTIVE DATE: April 1, 2024
+TERM: 60 months (5 years)
+
+1. SUPPLY COMMITMENT
+Manufacturer agrees to supply Buyer with precision automotive components 
+("Components") as specified in Exhibit A for the term of this Agreement.
+
+2. VOLUME AND PRICING
+- Estimated annual volume: 500,000 units
+- Base unit price: $45.00 per unit
+- Total estimated annual value: $22,500,000
+
+3. PRICE ADJUSTMENTS
+Annual price adjustments permitted based on documented raw material cost changes, 
+not to exceed 5% per year.
+
+4. PRICE PROTECTION AND MOST FAVORED CUSTOMER CLAUSE
+
+*** MOST FAVORED CUSTOMER GUARANTEE ***
+
+Manufacturer warrants and guarantees that Buyer shall receive the most favorable 
+pricing offered to any customer for comparable Components:
+
+a) PRICE MATCHING: If Manufacturer offers a lower price to any other customer 
+   for the same or substantially similar Components, Manufacturer shall 
+   immediately reduce Buyer's price to match.
+
+b) RETROACTIVE ADJUSTMENT: Price reductions shall be applied retroactively to 
+   all purchases made in the current calendar quarter. Manufacturer shall issue 
+   credits within 30 days.
+
+c) AUDIT RIGHTS: Buyer may audit Manufacturer's pricing records annually to 
+   verify compliance with this clause.
+
+d) MOST FAVORED STATUS: This guarantee applies to:
+   - Published list prices
+   - Negotiated contract prices
+   - Volume discount arrangements
+   - Promotional pricing
+   - Any other pricing arrangement
+
+e) REBATE GUARANTEE: Any rebates, incentives, or other price concessions offered 
+   to other customers shall be offered to Buyer on equivalent terms.
+
+*** END MFC CLAUSE ***
+
+5. QUALITY REQUIREMENTS
+- Defect rate: Not to exceed 0.1%
+- ISO 9001 certification required
+- Right to inspect manufacturing facility
+
+6. DELIVERY
+- Delivery terms: FOB Buyer's facility
+- Lead time: 4 weeks from purchase order
+- Late delivery penalty: 1% per week, capped at 10%
+
+7. INVENTORY
+Manufacturer shall maintain 8 weeks of safety stock for Buyer's requirements.
+
+8. EXCLUSIVITY
+Manufacturer shall not supply Components to Buyer's direct competitors 
+without Buyer's written consent.
+
+9. TERMINATION
+- Termination for convenience: 180 days notice
+- Termination for cause: 30 days to cure
+
+10. INDEMNIFICATION
+Manufacturer indemnifies Buyer against third-party IP claims related to Components.
+
+SIGNATURES:
+_________________________ _________________________
+Industrial Components Corp. AutoMakers International Inc.
+Date: April 1, 2024         Date: April 1, 2024
